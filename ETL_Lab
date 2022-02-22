@@ -317,10 +317,11 @@ SELECT * FROM northwind_dw.fact_orders;
 # PART 5
 
 SELECT customers.`last_name` as `customer_name`,
-	SUM(orders.`quantity`) as `total_quantity`,
+    SUM(orders.`quantity`) as `total_quantity`,
     SUM(orders.`unit_price`) as `total_unit_price`
 FROM `northwind_dw`.`fact_orders` AS orders
 INNER JOIN `northwind_dw`.`dim_customers` AS customers
 ON orders.customer_id = customers.customer_key
 group by customers.`last_name`
 order by total_unit_price Desc;
+

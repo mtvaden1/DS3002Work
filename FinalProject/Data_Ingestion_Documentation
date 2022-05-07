@@ -1,0 +1,13 @@
+To begin our process, we first accessed the API through the given URL and appended the contents of the API to a list once every minute. 
+We did this read of the API using the schedule library, where on the 15 second mark of every minute we read the contents of the page again.
+After 60 iterations from minute 00 to 59, we ended our read of the API and made changes to the data types within our list to make them appropriate for analysis.
+We then connected to a SQLite database and created a data frame out of our list with columns "Factors", "Pi", and "Time", and the corresponding data.
+After creating the data frame, we pushed it to the SQLite table called final_data. 
+We accessed the final_data table and iterated through its rows to print the number of rows and columns, checking that the data was ingested correctly. 
+After examining the data in a SQLite table, we printed out our initial impressions of the data. 
+Then, we graphed the relationships between the three columns in our database table pulled from the API. 
+The graph of factor vs pi showed that as factor increased, the pi value approached the real value of pi.
+The graph of factor over time showed that factor grows exponentially at a cubic rate, which is because factor was equal to the minute cubed. 
+The graph of pi over time showed that pi approaches the real value of pi, approaching from both an upper and lower bound.
+The absolute value of the difference between the API pi value and the real value of pi decreased as minutes increased. 
+After printing out the relationships between the data in rows and graphing the relationships among the variables, we closed our connection.
